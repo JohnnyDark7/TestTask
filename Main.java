@@ -11,25 +11,11 @@ public class Main {
         String checkForArabic = "^.*[0-9].*$";
         String checkForRoman = "^.*[IVXLCDM].*$";
         String[] data = input.split(" ");
-        if (data.length != 3) {
-            throw new RuntimeException("Wrong input data");
-        }
-        if (Pattern.matches(checkForUnacceptable, data[0])) {
-            throw new RuntimeException("Wrong input data");
-        }
-        if (Pattern.matches(checkForUnacceptable, data[2])) {
-            throw new RuntimeException("Wrong input data");
-        }
-        if (Pattern.matches(checkForArabic, data[0]) && Pattern.matches(checkForRoman, data[0])) {
-            throw new RuntimeException("Wrong input data");
-        }
-        if (Pattern.matches(checkForArabic, data[2]) && Pattern.matches(checkForRoman, data[2])) {
-            throw new RuntimeException("Wrong input data");
-        }
-        if (Pattern.matches(checkForArabic, data[0]) && Pattern.matches(checkForRoman, data[2])) {
-            throw new RuntimeException("Wrong input data");
-        }
-        if (Pattern.matches(checkForArabic, data[2]) && Pattern.matches(checkForRoman, data[0])) {
+        if (data.length != 3 | Pattern.matches(checkForUnacceptable, data[0]) | Pattern.matches(checkForUnacceptable, data[2]) |
+                (Pattern.matches(checkForArabic, data[0]) && Pattern.matches(checkForRoman, data[0])) |
+                (Pattern.matches(checkForArabic, data[2]) && Pattern.matches(checkForRoman, data[2])) |
+                (Pattern.matches(checkForArabic, data[0]) && Pattern.matches(checkForRoman, data[2])) |
+                (Pattern.matches(checkForArabic, data[2]) && Pattern.matches(checkForRoman, data[0]))) {
             throw new RuntimeException("Wrong input data");
         }
         int result;
