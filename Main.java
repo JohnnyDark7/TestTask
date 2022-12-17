@@ -17,16 +17,16 @@ public class Main {
         if (Pattern.matches("^.*[!-/:-BE-HJKN-UWY-~Ё-ё].*$", data[2])) {
             throw new RuntimeException("Wrong input data");
         }
-        if (Pattern.matches("[0-9]*", data[0]) && Pattern.matches("[IVXLCDM]*", data[0])) {
+        if (Pattern.matches("^.*[0-9].*$", data[0]) && Pattern.matches("^.*[IVXLCDM].*$", data[0])) {
             throw new RuntimeException("Wrong input data");
         }
-        if (Pattern.matches("[0-9]*", data[2]) && Pattern.matches("[IVXLCDM]*", data[2])) {
+        if (Pattern.matches("^.*[0-9].*$", data[2]) && Pattern.matches("^.*[IVXLCDM].*$", data[2])) {
             throw new RuntimeException("Wrong input data");
         }
-        if (Pattern.matches("[0-9]*", data[0]) && Pattern.matches("[IVXLCDM]*", data[2])) {
+        if (Pattern.matches("^.*[0-9].*$", data[0]) && Pattern.matches("^.*[IVXLCDM].*$", data[2])) {
             throw new RuntimeException("Wrong input data");
         }
-        if (Pattern.matches("[0-9]*", data[2]) && Pattern.matches("[IVXLCDM]*", data[0])) {
+        if (Pattern.matches("^.*[0-9].*$", data[2]) && Pattern.matches("^.*[IVXLCDM].*$", data[0])) {
             throw new RuntimeException("Wrong input data");
         }
         int result;
@@ -34,7 +34,7 @@ public class Main {
         int firstNumber;
         int secondNumber;
         boolean isRoman = false;
-        if (Pattern.matches("[0-9]*", data[0]) && Pattern.matches("[0-9]*", data[2])) {
+        if (Pattern.matches("^.*[0-9].*$", data[0]) && Pattern.matches("^.*[0-9].*$", data[2])) {
             firstNumber = Integer.parseInt(data[0]);
             secondNumber = Integer.parseInt(data[2]);
         } else {
