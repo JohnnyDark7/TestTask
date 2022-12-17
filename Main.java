@@ -7,26 +7,29 @@ public class Main {
         System.out.println(Main.calc(input));
     }
     public static String calc(String input) {
+        String checkForUnacceptable = "^.*[!-/:-BE-HJKN-UWY-~Ё-ё].*$";
+        String checkForArabic = "^.*[0-9].*$";
+        String checkForRoman = "^.*[IVXLCDM].*$";
         String[] data = input.split(" ");
         if (data.length != 3) {
             throw new RuntimeException("Wrong input data");
         }
-        if (Pattern.matches("^.*[!-/:-BE-HJKN-UWY-~Ё-ё].*$", data[0])) {
+        if (Pattern.matches(checkForUnacceptable, data[0])) {
             throw new RuntimeException("Wrong input data");
         }
-        if (Pattern.matches("^.*[!-/:-BE-HJKN-UWY-~Ё-ё].*$", data[2])) {
+        if (Pattern.matches(checkForUnacceptable, data[2])) {
             throw new RuntimeException("Wrong input data");
         }
-        if (Pattern.matches("^.*[0-9].*$", data[0]) && Pattern.matches("^.*[IVXLCDM].*$", data[0])) {
+        if (Pattern.matches(checkForArabic, data[0]) && Pattern.matches(checkForRoman, data[0])) {
             throw new RuntimeException("Wrong input data");
         }
-        if (Pattern.matches("^.*[0-9].*$", data[2]) && Pattern.matches("^.*[IVXLCDM].*$", data[2])) {
+        if (Pattern.matches(checkForArabic, data[2]) && Pattern.matches(checkForRoman, data[2])) {
             throw new RuntimeException("Wrong input data");
         }
-        if (Pattern.matches("^.*[0-9].*$", data[0]) && Pattern.matches("^.*[IVXLCDM].*$", data[2])) {
+        if (Pattern.matches(checkForArabic, data[0]) && Pattern.matches(checkForRoman, data[2])) {
             throw new RuntimeException("Wrong input data");
         }
-        if (Pattern.matches("^.*[0-9].*$", data[2]) && Pattern.matches("^.*[IVXLCDM].*$", data[0])) {
+        if (Pattern.matches(checkForArabic, data[2]) && Pattern.matches(checkForRoman, data[0])) {
             throw new RuntimeException("Wrong input data");
         }
         int result;
@@ -34,7 +37,7 @@ public class Main {
         int firstNumber;
         int secondNumber;
         boolean isRoman = false;
-        if (Pattern.matches("^.*[0-9].*$", data[0]) && Pattern.matches("^.*[0-9].*$", data[2])) {
+        if (Pattern.matches(checkForArabic, data[0]) && Pattern.matches(checkForArabic, data[2])) {
             firstNumber = Integer.parseInt(data[0]);
             secondNumber = Integer.parseInt(data[2]);
         } else {
