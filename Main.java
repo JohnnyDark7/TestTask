@@ -11,10 +11,10 @@ public class Main {
         if (data.length != 3) {
             throw new RuntimeException("Wrong input data");
         }
-        if (Pattern.matches("^.*[!-/:-BE-HJKN-UWY-~].*$", data[0])) {
+        if (Pattern.matches("^.*[!-/:-BE-HJKN-UWY-~Ё-ё].*$", data[0])) {
             throw new RuntimeException("Wrong input data");
         }
-        if (Pattern.matches("^.*[!-/:-BE-HJKN-UWY-~].*$", data[2])) {
+        if (Pattern.matches("^.*[!-/:-BE-HJKN-UWY-~Ё-ё].*$", data[2])) {
             throw new RuntimeException("Wrong input data");
         }
         if (Pattern.matches("[0-9]*", data[0]) && Pattern.matches("[IVXLCDM]*", data[0])) {
