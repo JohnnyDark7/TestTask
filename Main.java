@@ -1,5 +1,11 @@
+import java.util.Scanner;
 import java.util.regex.Pattern;
 public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String input = scan.nextLine();
+        System.out.println(Main.calc(input));
+    }
     public static String calc(String input) {
         String[] data = input.split(" ");
         if (data.length != 3) {
